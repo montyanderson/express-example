@@ -78,4 +78,16 @@ app.get("/", (req, res) => {
 	res.render("index", { layout: "layout" });
 });
 
+app.get("/json", (req, res) => {
+	res.end(JSON.stringify({
+		number: Math.random(),
+		bool: true,
+		obj: {
+			obj: {
+				existance: false
+			}
+		}
+	}));
+});
+
 app.listen(8080);
